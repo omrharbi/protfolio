@@ -147,10 +147,19 @@ function App() {
                 {/* 3D Container with depth layers */}
                 <div className="relative w-80 h-80 lg:w-[420px] lg:h-[420px]">
                   
-                  {/* Background depth layers - creating 3D effect behind the image */}
-                  <div className="absolute inset-0 transform translate-x-8 translate-y-8 z-0">
+                  {/* 3D Background Layers - Creating depth behind the image */}
+                  <div className="absolute inset-0 transform translate-x-12 translate-y-12 z-0">
                     <div 
-                      className="w-full h-full bg-gradient-to-br from-teal/20 to-teal/10 blur-sm"
+                      className="w-full h-full bg-gradient-to-br from-teal/15 to-teal/5 blur-lg"
+                      style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                      }}
+                    />
+                  </div>
+
+                  <div className="absolute inset-0 transform translate-x-8 translate-y-8 z-5">
+                    <div 
+                      className="w-full h-full bg-gradient-to-br from-teal/25 to-teal/10 blur-md"
                       style={{
                         clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
                       }}
@@ -159,7 +168,7 @@ function App() {
 
                   <div className="absolute inset-0 transform translate-x-4 translate-y-4 z-10">
                     <div 
-                      className="w-full h-full bg-gradient-to-br from-teal/30 to-teal/15 blur-[1px]"
+                      className="w-full h-full bg-gradient-to-br from-teal/35 to-teal/15 blur-sm"
                       style={{
                         clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
                       }}
@@ -170,19 +179,19 @@ function App() {
                   <div className="relative w-full h-full z-20">
                     {/* Hexagonal container for image */}
                     <div 
-                      className="w-full h-full overflow-hidden relative bg-gradient-to-br from-teal/40 to-teal/20"
+                      className="w-full h-full overflow-hidden relative"
                       style={{
                         clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
                       }}
                     >
-                      {/* Image with proper sizing to show full face */}
+                      {/* Your image with proper sizing to show full face */}
                       <img
                         src="/WhatsApp Image 2025-06-02 at 14.45.30(3)(1) (Copy).png"
                         alt="Omar Rharbi"
-                        className="w-full h-full object-cover object-center scale-110 hover:scale-115 transition-transform duration-500"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                         style={{
-                          objectPosition: 'center center',
-                          transform: 'scale(1.1) translateY(-5%)'
+                          objectPosition: 'center 20%',
+                          objectFit: 'cover'
                         }}
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
@@ -218,7 +227,7 @@ function App() {
                 </div>
 
                 {/* Bottom shadow for 3D depth effect */}
-                <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-4/5 h-12 bg-black/30 rounded-full blur-2xl z-0"></div>
+                <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-4/5 h-16 bg-black/40 rounded-full blur-3xl z-0"></div>
               </div>
             </div>
           </div>

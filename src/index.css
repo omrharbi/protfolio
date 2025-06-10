@@ -144,6 +144,11 @@
     backdrop-filter: blur(10px);
     border: 1px solid rgba(100, 255, 218, 0.2);
   }
+  
+  /* Z-index utilities for proper layering */
+  .z-5 {
+    z-index: 5;
+  }
 }
 
 /* Responsive adjustments */
