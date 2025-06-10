@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Menu, X, ExternalLink, Code, Palette, Database, User } from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X, ExternalLink, Code, Palette, Database, User, Braces } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -100,7 +100,7 @@ function App() {
                   Omar Rharbi
                 </h1>
                 <h2 className="text-2xl lg:text-3xl text-teal font-semibold animate-fade-in-delay-3">
-                  UI/UX Designer And Graphic Designer
+                  Full Stack Developer
                 </h2>
               </div>
 
@@ -208,22 +208,32 @@ function App() {
                     </div>
                   </div>
 
-                  {/* Floating 3D elements positioned around the image */}
-                  <div className="absolute -top-8 -left-8 w-20 h-20 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300 z-30">
-                    <div className="w-16 h-16 bg-teal/30 rounded-full flex items-center justify-center">
-                      <Code className="w-8 h-8 text-teal drop-shadow-lg" />
+                  {/* Floating 3D elements positioned around the image - Full Stack Developer Icons */}
+                  {/* Coding/Programming Icon - Top Left with Float Animation */}
+                  <div className="absolute -top-6 -left-6 w-14 h-14 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-1 animate-pulse-glow">
+                    <div className="w-10 h-10 bg-teal/30 rounded-full flex items-center justify-center">
+                      <Braces className="w-5 h-5 text-teal drop-shadow-lg animate-rotate-slow" />
                     </div>
                   </div>
                   
-                  <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300 z-30">
-                    <div className="w-16 h-16 bg-teal/30 rounded-full flex items-center justify-center">
-                      <Palette className="w-8 h-8 text-teal drop-shadow-lg" />
+                  {/* Database Icon - Bottom Right with Different Float Animation */}
+                  <div className="absolute -bottom-6 -right-6 w-14 h-14 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-2">
+                    <div className="w-10 h-10 bg-teal/30 rounded-full flex items-center justify-center">
+                      <Database className="w-5 h-5 text-teal drop-shadow-lg animate-bounce-subtle" />
                     </div>
                   </div>
                   
-                  <div className="absolute top-1/2 -right-12 w-16 h-16 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300 z-30">
-                    <div className="w-12 h-12 bg-teal/30 rounded-full flex items-center justify-center">
-                      <Database className="w-6 h-6 text-teal drop-shadow-lg" />
+                  {/* CSS/Styling Icon - Right Side with Rotation Animation */}
+                  <div className="absolute top-1/2 -right-8 w-12 h-12 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-3">
+                    <div className="w-8 h-8 bg-teal/30 rounded-full flex items-center justify-center">
+                      <div className="text-teal font-bold text-xs drop-shadow-lg">CSS</div>
+                    </div>
+                  </div>
+
+                  {/* Additional Full Stack Icon - Left Side with Subtle Float */}
+                  <div className="absolute top-1/3 -left-8 w-12 h-12 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-4">
+                    <div className="w-8 h-8 bg-teal/30 rounded-full flex items-center justify-center">
+                      <Code className="w-4 h-4 text-teal drop-shadow-lg" />
                     </div>
                   </div>
                 </div>

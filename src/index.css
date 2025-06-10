@@ -101,6 +101,35 @@
     opacity: 0;
   }
 
+  /* Floating Icon Animations */
+  .animate-float-1 {
+    animation: float1 6s ease-in-out infinite;
+  }
+
+  .animate-float-2 {
+    animation: float2 8s ease-in-out infinite;
+  }
+
+  .animate-float-3 {
+    animation: float3 7s ease-in-out infinite;
+  }
+
+  .animate-float-4 {
+    animation: float4 9s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  .animate-rotate-slow {
+    animation: rotateSlow 20s linear infinite;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounceSubtle 4s ease-in-out infinite;
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -110,6 +139,84 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes float1 {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-8px) translateX(3px) rotate(5deg);
+    }
+    50% {
+      transform: translateY(-4px) translateX(-2px) rotate(-3deg);
+    }
+    75% {
+      transform: translateY(-12px) translateX(1px) rotate(2deg);
+    }
+  }
+
+  @keyframes float2 {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px) scale(1);
+    }
+    33% {
+      transform: translateY(-6px) translateX(-4px) scale(1.05);
+    }
+    66% {
+      transform: translateY(-10px) translateX(2px) scale(0.95);
+    }
+  }
+
+  @keyframes float3 {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-8px) rotate(180deg);
+    }
+  }
+
+  @keyframes float4 {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    25% {
+      transform: translateY(-5px) translateX(-3px);
+    }
+    50% {
+      transform: translateY(-8px) translateX(0px);
+    }
+    75% {
+      transform: translateY(-3px) translateX(3px);
+    }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(100, 255, 218, 0.6);
+    }
+  }
+
+  @keyframes rotateSlow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes bounceSubtle {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
     }
   }
 
@@ -192,6 +299,14 @@
   .animate-fade-in-delay-6 {
     animation-delay: 0s;
     animation-duration: 0.8s;
+  }
+
+  /* Reduce animation intensity on mobile */
+  .animate-float-1,
+  .animate-float-2,
+  .animate-float-3,
+  .animate-float-4 {
+    animation-duration: 8s;
   }
 }
 
