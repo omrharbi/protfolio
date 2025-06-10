@@ -49,7 +49,7 @@
     background-color: #64FFDA !important;
   }
   
-  /* Animation Classes */
+  /* Enhanced Animation Classes */
   .animate-fade-in {
     animation: fadeIn 1s ease-out forwards;
     opacity: 0;
@@ -85,8 +85,9 @@
     opacity: 0;
   }
   
+  /* 3D Float Animation - Removed for cleaner look */
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: subtleFloat 8s ease-in-out infinite;
   }
   
   @keyframes fadeIn {
@@ -100,13 +101,42 @@
     }
   }
   
-  @keyframes float {
+  @keyframes subtleFloat {
     0%, 100% {
-      transform: translateY(0px);
+      transform: translateY(0px) scale(1);
     }
     50% {
-      transform: translateY(-20px);
+      transform: translateY(-10px) scale(1.02);
     }
+  }
+  
+  /* Enhanced 3D Effects */
+  .shadow-3d {
+    box-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.12),
+      0 8px 16px rgba(0, 0, 0, 0.08),
+      0 16px 32px rgba(0, 0, 0, 0.04);
+  }
+  
+  .shadow-3d-hover:hover {
+    box-shadow: 
+      0 8px 16px rgba(0, 0, 0, 0.16),
+      0 16px 32px rgba(0, 0, 0, 0.12),
+      0 32px 64px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+  }
+  
+  /* Depth and layering effects */
+  .depth-layer-1 {
+    transform: translateZ(10px);
+  }
+  
+  .depth-layer-2 {
+    transform: translateZ(20px);
+  }
+  
+  .depth-layer-3 {
+    transform: translateZ(30px);
   }
   
   /* Custom scrollbar */
@@ -125,6 +155,21 @@
   
   ::-webkit-scrollbar-thumb:hover {
     background: #4ECDC4;
+  }
+  
+  /* Gradient text effect */
+  .gradient-text {
+    background: linear-gradient(135deg, #64FFDA 0%, #4ECDC4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Glass morphism effect */
+  .glass-effect {
+    background: rgba(100, 255, 218, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 255, 218, 0.2);
   }
 }
 
@@ -160,5 +205,24 @@
   .focus-ring:focus {
     outline: 2px solid #64FFDA;
     outline-offset: 2px;
+  }
+}
+
+/* 3D Transform utilities */
+@layer utilities {
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+  
+  .rotate-x-12 {
+    transform: rotateX(12deg);
   }
 }

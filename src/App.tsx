@@ -78,8 +78,16 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center pt-20">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+      <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        {/* 3D Background Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Background geometric shapes for depth */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-teal/5 rounded-full blur-xl"></div>
+          <div className="absolute bottom-40 right-20 w-48 h-48 bg-teal/3 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-teal/8 transform rotate-45 blur-lg"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-8 animate-fade-in">
@@ -133,56 +141,100 @@ function App() {
               </div>
             </div>
 
-            {/* Right Content - Profile Image */}
+            {/* Right Content - 3D Profile Image */}
             <div className="flex justify-center lg:justify-end animate-fade-in-delay-3">
               <div className="relative">
-                {/* Hexagonal Background */}
-                <div className="w-80 h-80 lg:w-[500px] lg:h-[700px] relative">
-                  <div 
-                    className="absolute inset-0 bg-teal/20 animate-float"
-                    style={{
-                      clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
-                    }}
-                  />
-                  <div 
-                    className="absolute inset-3 bg-teal/30"
-                    style={{
-                      clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
-                    }}
-                  />
-                  <div 
-                    className="absolute inset-6 overflow-hidden bg-navy/50"
-                    style={{
-                      clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
-                    }}
-                  >
-                    <img
-                      src="/WhatsApp Image 2025-06-02 at 14.45.30(3)(1) (Copy).png"
-                      alt="Omar Rharbi"
-                      className="w-full h-full object-cover object-center"
-                      onError={(e) => {
-                        // Fallback if image doesn't load
-                        e.currentTarget.style.display = 'none';
-                        // e.currentTarget.nextElementSibling.style.display = 'flex';
+                {/* 3D Container with depth layers */}
+                <div className="relative w-80 h-80 lg:w-[420px] lg:h-[420px]">
+                  
+                  {/* Background depth layer - furthest back */}
+                  <div className="absolute inset-0 transform translate-x-4 translate-y-4 opacity-20">
+                    <div 
+                      className="w-full h-full bg-teal/30 blur-sm"
+                      style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
                       }}
                     />
-                    {/* Fallback content */}
-                    <div className="w-full h-full bg-teal/10 flex items-center justify-center" style={{ display: 'none' }}>
-                      <User className="w-24 h-24 text-teal/60" />
+                  </div>
+
+                  {/* Middle depth layer */}
+                  <div className="absolute inset-0 transform translate-x-2 translate-y-2 opacity-40">
+                    <div 
+                      className="w-full h-full bg-teal/40 blur-[1px]"
+                      style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                      }}
+                    />
+                  </div>
+
+                  {/* Main hexagonal container */}
+                  <div className="relative w-full h-full">
+                    {/* Outer glow effect */}
+                    <div 
+                      className="absolute inset-0 bg-teal/20 blur-md"
+                      style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                      }}
+                    />
+                    
+                    {/* Main hexagon with gradient border */}
+                    <div 
+                      className="absolute inset-0 bg-gradient-to-br from-teal/60 via-teal/40 to-teal/20 p-1"
+                      style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                      }}
+                    >
+                      {/* Inner hexagon for image */}
+                      <div 
+                        className="w-full h-full bg-navy/80 overflow-hidden relative"
+                        style={{
+                          clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                        }}
+                      >
+                        {/* Image with 3D effect */}
+                        <img
+                          src="/WhatsApp Image 2025-06-02 at 14.45.30(3)(1) (Copy).png"
+                          alt="Omar Rharbi"
+                          className="w-full h-full object-cover object-center transform scale-110 hover:scale-115 transition-transform duration-500"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                            if (fallback) fallback.style.display = 'flex';
+                          }}
+                        />
+                        {/* Fallback content */}
+                        <div className="w-full h-full bg-teal/10 flex items-center justify-center" style={{ display: 'none' }}>
+                          <User className="w-24 h-24 text-teal/60" />
+                        </div>
+                        
+                        {/* Overlay gradient for depth */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent pointer-events-none"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floating 3D elements with enhanced shadows */}
+                  <div className="absolute -top-8 -left-8 w-20 h-20 bg-gradient-to-br from-teal/30 to-teal/10 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300">
+                    <div className="w-16 h-16 bg-teal/20 rounded-full flex items-center justify-center">
+                      <Code className="w-8 h-8 text-teal drop-shadow-lg" />
+                    </div>
+                  </div>
+                  
+                  <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-teal/30 to-teal/10 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300" style={{ animationDelay: '2s' }}>
+                    <div className="w-16 h-16 bg-teal/20 rounded-full flex items-center justify-center">
+                      <Palette className="w-8 h-8 text-teal drop-shadow-lg" />
+                    </div>
+                  </div>
+                  
+                  <div className="absolute top-1/2 -right-12 w-16 h-16 bg-gradient-to-br from-teal/30 to-teal/10 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300" style={{ animationDelay: '4s' }}>
+                    <div className="w-12 h-12 bg-teal/20 rounded-full flex items-center justify-center">
+                      <Database className="w-6 h-6 text-teal drop-shadow-lg" />
                     </div>
                   </div>
                 </div>
 
-                {/* Floating Elements */}
-                <div className="absolute -top-6 -left-6 w-20 h-20 bg-teal/20 rounded-full flex items-center justify-center animate-float backdrop-blur-sm">
-                  <Code className="w-10 h-10 text-teal" />
-                </div>
-                <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-teal/20 rounded-full flex items-center justify-center animate-float backdrop-blur-sm" style={{ animationDelay: '2s' }}>
-                  <Palette className="w-10 h-10 text-teal" />
-                </div>
-                <div className="absolute top-1/2 -right-10 w-16 h-16 bg-teal/20 rounded-full flex items-center justify-center animate-float backdrop-blur-sm" style={{ animationDelay: '4s' }}>
-                  <Database className="w-8 h-8 text-teal" />
-                </div>
+                {/* Bottom shadow for 3D effect */}
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-3/4 h-8 bg-black/20 rounded-full blur-xl"></div>
               </div>
             </div>
           </div>
