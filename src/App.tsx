@@ -144,7 +144,7 @@ function App() {
             </div>
 
             {/* Right Content - 3D Profile Image */}
-            <div className="flex justify-center lg:justify-end animate-fade-in-delay-3">
+            <div className="flex justify-center lg:justify-start animate-fade-in-delay-3">
               <div className="relative perspective-1000">
                 {/* 3D Container with depth layers */}
                 <div className="relative w-80 h-80 lg:w-[420px] lg:h-[420px]">
