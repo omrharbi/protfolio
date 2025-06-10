@@ -1,140 +1,281 @@
-import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Github, Linkedin, Mail, Menu, X, ExternalLink, Code, Palette, Database } from 'lucide-react';
 
 function App() {
-  return (
-    <div style={{ 
-      minHeight: '100vh', 
-      backgroundColor: '#0A192F', 
-      color: '#E6F1FF',
-      padding: '2rem'
-    }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: '1fr 1fr', 
-          gap: '4rem', 
-          alignItems: 'center',
-          minHeight: '80vh'
-        }}>
-          
-          {/* Left Column */}
-          <div style={{ textAlign: 'left' }}>
-            <p style={{ 
-              fontSize: '1.5rem', 
-              color: '#8892B0', 
-              marginBottom: '1rem',
-              fontWeight: '300'
-            }}>
-              Hi I'm
-            </p>
-            
-            <h1 style={{ 
-              fontSize: '4rem', 
-              fontWeight: 'bold', 
-              color: '#E6F1FF',
-              margin: '0 0 1rem 0',
-              letterSpacing: '2px'
-            }}>
-              OMAR RHARBI
-            </h1>
-            
-            <h2 style={{ 
-              fontSize: '2rem', 
-              color: '#64FFDA',
-              margin: '0 0 2rem 0',
-              fontWeight: '500'
-            }}>
-              FULL STACK DEVELOPER
-            </h2>
-            
-            <p style={{ 
-              fontSize: '1.2rem', 
-              color: '#8892B0',
-              lineHeight: '1.6',
-              marginBottom: '3rem',
-              maxWidth: '500px'
-            }}>
-              Building digital experiences with modern web technologies and innovative solutions.
-            </p>
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
-            {/* Tech Stack */}
-            <div style={{ marginBottom: '3rem' }}>
-              <p style={{ 
-                color: '#8892B0', 
-                fontSize: '0.9rem',
-                textTransform: 'uppercase',
-                letterSpacing: '2px',
-                marginBottom: '1rem'
-              }}>
-                Tech Stack
-              </p>
-              <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
-                {['🌐 HTML5', '🎨 CSS3', '⚡ JavaScript', '⚛️ React', '🟢 Node.js', '📘 TypeScript'].map((tech) => (
-                  <div key={tech} style={{ 
-                    color: '#8892B0',
-                    fontSize: '0.9rem',
-                    cursor: 'pointer',
-                    transition: 'color 0.3s'
-                  }}>
-                    {tech}
-                  </div>
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = ['Home', 'Projects', 'Resume'];
+
+  return (
+    <div className="min-h-screen bg-navy text-white">
+      {/* Navigation */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrollY > 50 ? 'bg-navy/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      }`}>
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-teal rounded-lg flex items-center justify-center">
+                <Code className="w-5 h-5 text-navy" />
+              </div>
+              <span className="text-xl font-bold">Portfolio</span>
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-light-gray hover:text-teal transition-colors duration-300 font-medium"
+                >
+                  {item}
+                </a>
+              ))}
+              <button className="bg-teal text-navy px-6 py-2 rounded-lg font-semibold hover:bg-teal/90 transition-all duration-300 transform hover:scale-105">
+                Let's Talk
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-white"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t border-light-gray/20">
+              <div className="flex flex-col space-y-4 mt-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    className="text-light-gray hover:text-teal transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item}
+                  </a>
                 ))}
+                <button className="bg-teal text-navy px-6 py-2 rounded-lg font-semibold w-fit">
+                  Let's Talk
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="home" className="min-h-screen flex items-center pt-20">
+        <div className="max-w-7xl mx-auto px-6 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-8 animate-fade-in">
+              <div className="space-y-4">
+                <p className="text-teal text-lg font-medium animate-fade-in-delay-1">
+                  Hello, I'm
+                </p>
+                <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-delay-2">
+                  Omar Rharbi
+                </h1>
+                <h2 className="text-2xl lg:text-3xl text-teal font-semibold animate-fade-in-delay-3">
+                  UI/UX Designer And Graphic Designer
+                </h2>
+              </div>
+
+              <p className="text-light-gray text-lg leading-relaxed max-w-lg animate-fade-in-delay-4">
+                I specialize in creating beautiful, functional digital experiences that solve real-world problems. 
+                Let's build something amazing together.
+              </p>
+
+              {/* CTA Button */}
+              <div className="animate-fade-in-delay-5">
+                <button className="bg-teal text-navy px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                  Let's Talk
+                </button>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex items-center space-x-6 animate-fade-in-delay-6">
+                <span className="text-light-gray text-sm">Check Out My</span>
+                <div className="flex space-x-4">
+                  <a
+                    href="https://github.com"
+                    className="w-10 h-10 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
+                  >
+                    <Github size={20} />
+                  </a>
+                  <a
+                    href="https://linkedin.com"
+                    className="w-10 h-10 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
+                  >
+                    <Linkedin size={20} />
+                  </a>
+                  <a
+                    href="mailto:omar@example.com"
+                    className="w-10 h-10 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
+                  >
+                    <Mail size={20} />
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Contact Links */}
-            <div style={{ display: 'flex', gap: '2rem' }}>
-              <a href="mailto:omar@example.com" style={{ 
-                color: '#8892B0', 
-                textDecoration: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem'
-              }}>
-                <Mail size={20} />
-                Email
-              </a>
-              <a href="https://github.com" style={{ 
-                color: '#8892B0', 
-                textDecoration: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem'
-              }}>
-                <Github size={20} />
-                GitHub
-              </a>
-              <a href="https://linkedin.com" style={{ 
-                color: '#8892B0', 
-                textDecoration: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem'
-              }}>
-                <Linkedin size={20} />
-                LinkedIn
-              </a>
-            </div>
-          </div>
+            {/* Right Content - Profile Image */}
+            <div className="flex justify-center lg:justify-end animate-fade-in-delay-3">
+              <div className="relative">
+                {/* Hexagonal Background */}
+                <div className="w-80 h-80 lg:w-96 lg:h-96 relative">
+                  <div 
+                    className="absolute inset-0 bg-teal/20 animate-float"
+                    style={{
+                      clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+                      transform: 'rotate(0deg)'
+                    }}
+                  />
+                  <div 
+                    className="absolute inset-4 bg-teal/40"
+                    style={{
+                      clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+                    }}
+                  />
+                  <div 
+                    className="absolute inset-8 overflow-hidden"
+                    style={{
+                      clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+                    }}
+                  >
+                    <img
+                      src="./WhatsApp Image 2025-06-02 at 14.45.30(3)(1) (Copy).png"
+                      alt="Omar Rharbi"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
 
-          {/* Right Column - Profile Photo */}
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <div style={{ position: 'relative' }}>
-              <img
-                src="./WhatsApp Image 2025-06-02 at 14.45.30(3)(1) (Copy).png"
-                alt="Omar Rharbi"
-                style={{
-                  width: '100%',
-                  height: '450px',
-                  objectFit: 'cover',
-                  borderRadius: '1rem'
-                }}
-              />
+                {/* Floating Elements */}
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-teal/20 rounded-full flex items-center justify-center animate-float">
+                  <Code className="w-8 h-8 text-teal" />
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-teal/20 rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '2s' }}>
+                  <Palette className="w-8 h-8 text-teal" />
+                </div>
+                <div className="absolute top-1/2 -right-8 w-12 h-12 bg-teal/20 rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '4s' }}>
+                  <Database className="w-6 h-6 text-teal" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-20 bg-navy/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Tech Stack
+            </h3>
+            <p className="text-light-gray text-lg max-w-2xl mx-auto">
+              Technologies I work with to bring ideas to life
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {[
+              { name: 'HTML5', icon: '🌐' },
+              { name: 'CSS3', icon: '🎨' },
+              { name: 'JavaScript', icon: '⚡' },
+              { name: 'React', icon: '⚛️' },
+              { name: 'Node.js', icon: '🟢' },
+              { name: 'TypeScript', icon: '📘' }
+            ].map((tech, index) => (
+              <div
+                key={tech.name}
+                className="bg-light-gray/5 p-6 rounded-xl text-center hover:bg-teal/10 transition-all duration-300 transform hover:scale-105 group"
+              >
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {tech.icon}
+                </div>
+                <p className="text-light-gray group-hover:text-teal transition-colors duration-300 font-medium">
+                  {tech.name}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Preview */}
+      <section id="projects" className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Featured Projects
+            </h3>
+            <p className="text-light-gray text-lg max-w-2xl mx-auto">
+              Some of my recent work that showcases my skills and creativity
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map((project) => (
+              <div
+                key={project}
+                className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group"
+              >
+                <div className="h-48 bg-teal/20 flex items-center justify-center">
+                  <Code className="w-16 h-16 text-teal/60" />
+                </div>
+                <div className="p-6">
+                  <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-teal transition-colors duration-300">
+                    Project {project}
+                  </h4>
+                  <p className="text-light-gray mb-4">
+                    A brief description of this amazing project and the technologies used to build it.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex space-x-2">
+                      <span className="px-3 py-1 bg-teal/20 text-teal text-sm rounded-full">React</span>
+                      <span className="px-3 py-1 bg-teal/20 text-teal text-sm rounded-full">CSS</span>
+                    </div>
+                    <ExternalLink className="w-5 h-5 text-light-gray group-hover:text-teal transition-colors duration-300" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 border-t border-light-gray/20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+              <div className="w-8 h-8 bg-teal rounded-lg flex items-center justify-center">
+                <Code className="w-5 h-5 text-navy" />
+              </div>
+              <span className="text-xl font-bold">Omar Rharbi</span>
+            </div>
+            <p className="text-light-gray text-center md:text-right">
+              © 2025 Omar Rharbi. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
