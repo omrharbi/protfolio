@@ -122,11 +122,11 @@ function App() {
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <div style={{ position: 'relative' }}>
               <img
-                src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=500"
+                src="./WhatsApp Image 2025-06-02 at 14.45.30(3)(1) (Copy).png"
                 alt="Omar Rharbi"
                 style={{
-                  width: '350px',
-                  height: '350px',
+                  width: '100%',
+                  height: '450px',
                   objectFit: 'cover',
                   borderRadius: '1rem'
                 }}
