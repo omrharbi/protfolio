@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Menu, X, ExternalLink, Code, Palette, Database } from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X, ExternalLink, Code, Palette, Database, User } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,8 +23,8 @@ function App() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-teal rounded-lg flex items-center justify-center">
-                <Code className="w-5 h-5 text-navy" />
+              <div className="w-10 h-10 bg-teal rounded-lg flex items-center justify-center">
+                <Code className="w-6 h-6 text-navy" />
               </div>
               <span className="text-xl font-bold">Portfolio</span>
             </div>
@@ -113,21 +113,21 @@ function App() {
                 <div className="flex space-x-4">
                   <a
                     href="https://github.com"
-                    className="w-10 h-10 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
+                    className="w-12 h-12 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
                   >
-                    <Github size={20} />
+                    <Github size={24} />
                   </a>
                   <a
                     href="https://linkedin.com"
-                    className="w-10 h-10 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
+                    className="w-12 h-12 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
                   >
-                    <Linkedin size={20} />
+                    <Linkedin size={24} />
                   </a>
                   <a
                     href="mailto:omar@example.com"
-                    className="w-10 h-10 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
+                    className="w-12 h-12 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
                   >
-                    <Mail size={20} />
+                    <Mail size={24} />
                   </a>
                 </div>
               </div>
@@ -137,43 +137,51 @@ function App() {
             <div className="flex justify-center lg:justify-end animate-fade-in-delay-3">
               <div className="relative">
                 {/* Hexagonal Background */}
-                <div className="w-80 h-80 lg:w-96 lg:h-96 relative">
+                <div className="w-80 h-80 lg:w-[400px] lg:h-[400px] relative">
                   <div 
                     className="absolute inset-0 bg-teal/20 animate-float"
                     style={{
                       clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
-                      transform: 'rotate(0deg)'
                     }}
                   />
                   <div 
-                    className="absolute inset-4 bg-teal/40"
+                    className="absolute inset-3 bg-teal/30"
                     style={{
                       clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
                     }}
                   />
                   <div 
-                    className="absolute inset-8 overflow-hidden"
+                    className="absolute inset-6 overflow-hidden bg-navy/50"
                     style={{
                       clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
                     }}
                   >
                     <img
-                      src="./WhatsApp Image 2025-06-02 at 14.45.30(3)(1) (Copy).png"
+                      src="/WhatsApp Image 2025-06-02 at 14.45.30(3)(1) (Copy).png"
                       alt="Omar Rharbi"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
+                      onError={(e) => {
+                        // Fallback if image doesn't load
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling.style.display = 'flex';
+                      }}
                     />
+                    {/* Fallback content */}
+                    <div className="w-full h-full bg-teal/10 flex items-center justify-center" style={{ display: 'none' }}>
+                      <User className="w-24 h-24 text-teal/60" />
+                    </div>
                   </div>
                 </div>
 
                 {/* Floating Elements */}
-                <div className="absolute -top-4 -left-4 w-16 h-16 bg-teal/20 rounded-full flex items-center justify-center animate-float">
-                  <Code className="w-8 h-8 text-teal" />
+                <div className="absolute -top-6 -left-6 w-20 h-20 bg-teal/20 rounded-full flex items-center justify-center animate-float backdrop-blur-sm">
+                  <Code className="w-10 h-10 text-teal" />
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-teal/20 rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '2s' }}>
-                  <Palette className="w-8 h-8 text-teal" />
+                <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-teal/20 rounded-full flex items-center justify-center animate-float backdrop-blur-sm" style={{ animationDelay: '2s' }}>
+                  <Palette className="w-10 h-10 text-teal" />
                 </div>
-                <div className="absolute top-1/2 -right-8 w-12 h-12 bg-teal/20 rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '4s' }}>
-                  <Database className="w-6 h-6 text-teal" />
+                <div className="absolute top-1/2 -right-10 w-16 h-16 bg-teal/20 rounded-full flex items-center justify-center animate-float backdrop-blur-sm" style={{ animationDelay: '4s' }}>
+                  <Database className="w-8 h-8 text-teal" />
                 </div>
               </div>
             </div>
@@ -265,8 +273,8 @@ function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="w-8 h-8 bg-teal rounded-lg flex items-center justify-center">
-                <Code className="w-5 h-5 text-navy" />
+              <div className="w-10 h-10 bg-teal rounded-lg flex items-center justify-center">
+                <Code className="w-6 h-6 text-navy" />
               </div>
               <span className="text-xl font-bold">Omar Rharbi</span>
             </div>
@@ -275,7 +283,7 @@ function App() {
             </p>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }
