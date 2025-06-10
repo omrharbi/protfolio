@@ -163,7 +163,7 @@ function App() {
                       onError={(e) => {
                         // Fallback if image doesn't load
                         e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling.style.display = 'flex';
+                        // e.currentTarget.nextElementSibling.style.display = 'flex';
                       }}
                     />
                     {/* Fallback content */}
