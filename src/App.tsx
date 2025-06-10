@@ -283,7 +283,7 @@ function App() {
             </p>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }
