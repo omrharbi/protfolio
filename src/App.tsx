@@ -209,29 +209,29 @@ function App() {
                   </div>
 
                   {/* Floating 3D elements positioned around the image - Full Stack Developer Icons */}
-                  {/* Coding/Programming Icon - Top Left */}
-                  <div className="absolute -top-6 -left-6 w-14 h-14 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30">
+                  {/* Coding/Programming Icon - Top Left with Float Animation */}
+                  <div className="absolute -top-6 -left-6 w-14 h-14 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-1 animate-pulse-glow">
                     <div className="w-10 h-10 bg-teal/30 rounded-full flex items-center justify-center">
-                      <Braces className="w-5 h-5 text-teal drop-shadow-lg" />
+                      <Braces className="w-5 h-5 text-teal drop-shadow-lg animate-rotate-slow" />
                     </div>
                   </div>
                   
-                  {/* Database Icon - Bottom Right */}
-                  <div className="absolute -bottom-6 -right-6 w-14 h-14 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30">
+                  {/* Database Icon - Bottom Right with Different Float Animation */}
+                  <div className="absolute -bottom-6 -right-6 w-14 h-14 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-2">
                     <div className="w-10 h-10 bg-teal/30 rounded-full flex items-center justify-center">
-                      <Database className="w-5 h-5 text-teal drop-shadow-lg" />
+                      <Database className="w-5 h-5 text-teal drop-shadow-lg animate-bounce-subtle" />
                     </div>
                   </div>
                   
-                  {/* CSS/Styling Icon - Right Side */}
-                  <div className="absolute top-1/2 -right-8 w-12 h-12 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30">
+                  {/* CSS/Styling Icon - Right Side with Rotation Animation */}
+                  <div className="absolute top-1/2 -right-8 w-12 h-12 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-3">
                     <div className="w-8 h-8 bg-teal/30 rounded-full flex items-center justify-center">
                       <div className="text-teal font-bold text-xs drop-shadow-lg">CSS</div>
                     </div>
                   </div>
 
-                  {/* Additional Full Stack Icon - Left Side */}
-                  <div className="absolute top-1/3 -left-8 w-12 h-12 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30">
+                  {/* Additional Full Stack Icon - Left Side with Subtle Float */}
+                  <div className="absolute top-1/3 -left-8 w-12 h-12 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-4">
                     <div className="w-8 h-8 bg-teal/30 rounded-full flex items-center justify-center">
                       <Code className="w-4 h-4 text-teal drop-shadow-lg" />
                     </div>
