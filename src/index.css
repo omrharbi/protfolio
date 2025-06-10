@@ -85,11 +85,6 @@
     opacity: 0;
   }
   
-  /* 3D Float Animation - Removed for cleaner look */
-  .animate-float {
-    animation: subtleFloat 8s ease-in-out infinite;
-  }
-  
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -98,15 +93,6 @@
     to {
       opacity: 1;
       transform: translateY(0);
-    }
-  }
-  
-  @keyframes subtleFloat {
-    0%, 100% {
-      transform: translateY(0px) scale(1);
-    }
-    50% {
-      transform: translateY(-10px) scale(1.02);
     }
   }
   
@@ -124,19 +110,6 @@
       0 16px 32px rgba(0, 0, 0, 0.12),
       0 32px 64px rgba(0, 0, 0, 0.08);
     transform: translateY(-4px);
-  }
-  
-  /* Depth and layering effects */
-  .depth-layer-1 {
-    transform: translateZ(10px);
-  }
-  
-  .depth-layer-2 {
-    transform: translateZ(20px);
-  }
-  
-  .depth-layer-3 {
-    transform: translateZ(30px);
   }
   
   /* Custom scrollbar */
