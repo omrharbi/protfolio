@@ -137,7 +137,7 @@ function App() {
             <div className="flex justify-center lg:justify-end animate-fade-in-delay-3">
               <div className="relative">
                 {/* Hexagonal Background */}
-                <div className="w-80 h-80 lg:w-[400px] lg:h-[400px] relative">
+                <div className="w-80 h-80 lg:w-[500px] lg:h-[700px] relative">
                   <div 
                     className="absolute inset-0 bg-teal/20 animate-float"
                     style={{
