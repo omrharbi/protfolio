@@ -40,7 +40,8 @@ function App() {
                   {item}
                 </a>
               ))}
-              <button className="bg-teal text-navy px-6 py-2 rounded-lg font-semibold hover:bg-teal/90 transition-all duration-300 transform hover:scale-105">
+              <button className="bg-teal text-navy px-6 py-2 rounded-lg 
+              font-semibold hover:bg-teal/90 transition-all duration-300 transform hover:scale-105">
                 Let's Talk
               </button>
             </div>
@@ -133,7 +134,8 @@ function App() {
                   </a>
                   <a
                     href="mailto:omar@example.com"
-                    className="w-12 h-12 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
+                    className="w-12 h-12 bg-light-gray/10 rounded-full flex
+                     items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
                   >
                     <Mail size={24} />
                   </a>
@@ -152,7 +154,7 @@ function App() {
                     <div 
                       className="w-full h-full bg-gradient-to-br from-teal/15 to-teal/5 blur-lg"
                       style={{
-                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                        clipPath: 'polygon(28% 6%, 80% 7%, 102% 51%, 81% 101%, 26% 99%, 2% 57%)',
                       }}
                     />
                   </div>
@@ -161,7 +163,7 @@ function App() {
                     <div 
                       className="w-full h-full bg-gradient-to-br from-teal/25 to-teal/10 blur-md"
                       style={{
-                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                        clipPath: 'polygon(28% 6%, 80% 7%, 102% 51%, 81% 101%, 26% 99%, 2% 57%)',
                       }}
                     />
                   </div>
@@ -170,7 +172,7 @@ function App() {
                     <div 
                       className="w-full h-full bg-gradient-to-br from-teal/35 to-teal/15 blur-sm"
                       style={{
-                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                        clipPath: 'polygon(28% 6%, 80% 7%, 102% 51%, 81% 101%, 26% 99%, 2% 57%)',
                       }}
                     />
                   </div>
@@ -181,7 +183,7 @@ function App() {
                     <div 
                       className="w-full h-full overflow-hidden relative"
                       style={{
-                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                        // clipPath: 'polygon(28% 6%, 80% 7%, 102% 51%, 81% 101%, 26% 99%, 2% 57%)',
                       }}
                     >
                       {/* Your image with proper sizing to show full face */}
