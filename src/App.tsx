@@ -143,32 +143,56 @@ function App() {
 
             {/* Right Content - 3D Profile Image */}
             <div className="flex justify-center lg:justify-end animate-fade-in-delay-3">
-              <div className="relative">
-                {/* 3D Container */}
-                <div className="relative w-80 h-80 lg:w-[450px] lg:h-[450px]">
+              <div className="relative perspective-1000">
+                {/* 3D Container with depth layers */}
+                <div className="relative w-80 h-80 lg:w-[420px] lg:h-[420px]">
                   
                   {/* 3D Background Layers - Creating depth behind the image */}
-                  <div className="absolute inset-0 transform translate-x-8 translate-y-8 z-0">
-                    <div className="w-full h-full bg-teal/15 rounded-3xl blur-lg"></div>
+                  <div className="absolute inset-0 transform translate-x-12 translate-y-12 z-0">
+                    <div 
+                      className="w-full h-full bg-gradient-to-br from-teal/15 to-teal/5 blur-lg"
+                      style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                      }}
+                    />
                   </div>
 
-                  <div className="absolute inset-0 transform translate-x-4 translate-y-4 z-5">
-                    <div className="w-full h-full bg-teal/25 rounded-3xl blur-md"></div>
+                  <div className="absolute inset-0 transform translate-x-8 translate-y-8 z-5">
+                    <div 
+                      className="w-full h-full bg-gradient-to-br from-teal/25 to-teal/10 blur-md"
+                      style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                      }}
+                    />
                   </div>
 
-                  <div className="absolute inset-0 transform translate-x-2 translate-y-2 z-10">
-                    <div className="w-full h-full bg-teal/35 rounded-3xl blur-sm"></div>
+                  <div className="absolute inset-0 transform translate-x-4 translate-y-4 z-10">
+                    <div 
+                      className="w-full h-full bg-gradient-to-br from-teal/35 to-teal/15 blur-sm"
+                      style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                      }}
+                    />
                   </div>
 
                   {/* Main image container - highest z-index to show in front */}
                   <div className="relative w-full h-full z-20">
-                    {/* Rounded hexagonal container for image */}
-                    <div className="w-full h-full bg-teal rounded-3xl overflow-hidden relative shadow-2xl">
-                      {/* Your image with proper sizing to show full face and hands */}
+                    {/* Hexagonal container for image */}
+                    <div 
+                      className="w-full h-full overflow-hidden relative"
+                      style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                      }}
+                    >
+                      {/* Your image with proper sizing to show full face */}
                       <img
                         src="/WhatsApp Image 2025-06-02 at 14.45.30(3)(1) (Copy).png"
                         alt="Omar Rharbi"
-                        className="w-full h-full object-contain hover:scale-105 transition-transform duration-500 p-4"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        style={{
+                          objectPosition: 'center 20%',
+                          objectFit: 'cover'
+                        }}
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
                           const fallback = e.currentTarget.nextElementSibling as HTMLElement;
@@ -177,27 +201,33 @@ function App() {
                       />
                       {/* Fallback content */}
                       <div className="w-full h-full bg-teal/10 flex items-center justify-center" style={{ display: 'none' }}>
-                        <User className="w-24 h-24 text-navy/60" />
+                        <User className="w-24 h-24 text-teal/60" />
                       </div>
                     </div>
                   </div>
 
                   {/* Floating 3D elements positioned around the image */}
-                  <div className="absolute -top-6 -left-6 w-16 h-16 bg-navy/80 rounded-2xl flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300 z-30">
-                    <Code className="w-8 h-8 text-teal" />
+                  <div className="absolute -top-8 -left-8 w-20 h-20 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300 z-30">
+                    <div className="w-16 h-16 bg-teal/30 rounded-full flex items-center justify-center">
+                      <Code className="w-8 h-8 text-teal drop-shadow-lg" />
+                    </div>
                   </div>
                   
-                  <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-navy/80 rounded-2xl flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300 z-30">
-                    <Palette className="w-8 h-8 text-teal" />
+                  <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300 z-30">
+                    <div className="w-16 h-16 bg-teal/30 rounded-full flex items-center justify-center">
+                      <Palette className="w-8 h-8 text-teal drop-shadow-lg" />
+                    </div>
                   </div>
                   
-                  <div className="absolute top-1/2 -right-8 w-14 h-14 bg-navy/80 rounded-2xl flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300 z-30">
-                    <Database className="w-6 h-6 text-teal" />
+                  <div className="absolute top-1/2 -right-12 w-16 h-16 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl transform hover:scale-110 transition-all duration-300 z-30">
+                    <div className="w-12 h-12 bg-teal/30 rounded-full flex items-center justify-center">
+                      <Database className="w-6 h-6 text-teal drop-shadow-lg" />
+                    </div>
                   </div>
                 </div>
 
                 {/* Bottom shadow for 3D depth effect */}
-                <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-4/5 h-12 bg-black/30 rounded-full blur-2xl z-0"></div>
+                <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-4/5 h-16 bg-black/40 rounded-full blur-3xl z-0"></div>
               </div>
             </div>
           </div>
