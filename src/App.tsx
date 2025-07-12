@@ -145,44 +145,15 @@ function App() {
 
             {/* Professional Image Section */}
             <div className="relative flex items-center justify-center lg:justify-end">
-              <div className="professional-image-container">
-                {/* Background Circle */}
-                <div className="image-background-circle"></div>
-                
-                {/* Main Image */}
-                <div className="main-image-wrapper">
-                  <img
-                    src="/Asset_4300x.png"
-                    alt="Omar Rharbi"
-                    className="main-profile-image"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  />
-                </div>
-
-                {/* Achievement Metrics */}
-                <div className="metric-card metric-top-right">
-                  <div className="metric-number">3+</div>
-                  <div className="metric-label">Years of Experience</div>
-                </div>
-
-                <div className="metric-card metric-left">
-                  <div className="metric-number">50+</div>
-                  <div className="metric-label">Projects Completed</div>
-                </div>
-
-                <div className="metric-card metric-bottom-right">
-                  <div className="metric-number">99+</div>
-                  <div className="metric-label">Happy Clients</div>
-                </div>
-
-                <div className="metric-card metric-bottom-left">
-                  <div className="metric-number">100%</div>
-                  <div className="metric-label">Quality Code</div>
-                </div>
+              <div className="fullpage-image-container">
+                <img
+                  src="/Asset_4300x.png"
+                  alt="Omar Rharbi"
+                  className="fullpage-profile-image"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
               </div>
             </div>
           </div>

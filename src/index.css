@@ -49,218 +49,61 @@
     background-color: #64FFDA !important;
   }
   
-  /* Professional Image Container */
-  .professional-image-container {
+  /* Full Page Image Container */
+  .fullpage-image-container {
     position: relative;
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
-  }
-  
-  .image-background-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
-    height: 350px;
-    background: linear-gradient(135deg, #64FFDA 0%, #4ECDC4 50%, #64FFDA 100%);
-    border-radius: 50%;
-    z-index: 1;
-  }
-  
-  .main-image-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid #64FFDA;
-    z-index: 2;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  }
-  
-  .main-profile-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .fullpage-profile-image {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
     object-position: center;
-    transition: transform 0.5s ease;
-  }
-  
-  .main-profile-image:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Metric Cards */
-  .metric-card {
-    position: absolute;
-    background: rgba(10, 25, 47, 0.9);
-    border: 2px solid #64FFDA;
-    border-radius: 12px;
-    padding: 12px 16px;
-    text-align: center;
-    z-index: 3;
-    backdrop-filter: blur(10px);
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .metric-number {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #64FFDA;
-    line-height: 1;
-  }
-  
-  .metric-label {
-    font-size: 0.75rem;
-    color: #8892B0;
-    margin-top: 4px;
-    white-space: nowrap;
-  }
-  
-  /* Metric Positioning */
-  .metric-top-right {
-    top: 20px;
-    right: 20px;
-    animation-delay: 0s;
-  }
-  
-  .metric-left {
-    top: 50%;
-    left: -20px;
-    transform: translateY(-50%);
-    animation-delay: 0.5s;
-  }
-  
-  .metric-bottom-right {
-    bottom: 40px;
-    right: 40px;
-    animation-delay: 1s;
-  }
-  
-  .metric-bottom-left {
-    bottom: 80px;
-    left: 20px;
-    animation-delay: 1.5s;
-  }
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
+    transition: transform 0.3s ease;
+    filter: brightness(1.1) contrast(1.05);
   }
   
   /* Responsive Design */
   @media (max-width: 1024px) {
-    .professional-image-container {
-      width: 350px;
-      height: 350px;
+    .fullpage-image-container {
+      min-height: 70vh;
     }
     
-    .image-background-circle {
-      width: 300px;
-      height: 300px;
-    }
-    
-    .main-image-wrapper {
-      width: 270px;
-      height: 270px;
-    }
-    
-    .metric-number {
-      font-size: 1.25rem;
-    }
-    
-    .metric-label {
-      font-size: 0.7rem;
+    .fullpage-profile-image {
+      max-height: 70vh;
     }
   }
   
   @media (max-width: 768px) {
-    .professional-image-container {
-      width: 280px;
-      height: 280px;
-      margin: 2rem auto;
+    .fullpage-image-container {
+      min-height: 60vh;
+      margin: 2rem 0;
     }
     
-    .image-background-circle {
-      width: 240px;
-      height: 240px;
-    }
-    
-    .main-image-wrapper {
-      width: 220px;
-      height: 220px;
-    }
-    
-    .metric-card {
-      padding: 8px 12px;
-    }
-    
-    .metric-number {
-      font-size: 1rem;
-    }
-    
-    .metric-label {
-      font-size: 0.65rem;
-    }
-    
-    /* Adjust metric positions for mobile */
-    .metric-top-right {
-      top: 10px;
-      right: 10px;
-    }
-    
-    .metric-left {
-      left: -10px;
-    }
-    
-    .metric-bottom-right {
-      bottom: 20px;
-      right: 20px;
-    }
-    
-    .metric-bottom-left {
-      bottom: 40px;
-      left: 10px;
+    .fullpage-profile-image {
+      max-height: 60vh;
     }
   }
   
   @media (max-width: 480px) {
-    .professional-image-container {
-      width: 240px;
-      height: 240px;
+    .fullpage-image-container {
+      min-height: 50vh;
     }
     
-    .image-background-circle {
-      width: 200px;
-      height: 200px;
-    }
-    
-    .main-image-wrapper {
-      width: 180px;
-      height: 180px;
-    }
-    
-    .metric-card {
-      padding: 6px 10px;
-    }
-    
-    .metric-number {
-      font-size: 0.9rem;
-    }
-    
-    .metric-label {
-      font-size: 0.6rem;
+    .fullpage-profile-image {
+      max-height: 50vh;
     }
   }
+  
   /* Enhanced Animation Classes */
   .animate-fade-in {
     animation: fadeIn 1s ease-out forwards;
