@@ -165,32 +165,76 @@ function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Tech Stack
+              Skills & Expertise
             </h3>
             <p className="text-light-gray text-lg max-w-2xl mx-auto">
-              Technologies I work with to bring ideas to life
+              My technical proficiency across different technologies and frameworks
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { name: 'HTML5', icon: '🌐' },
-              { name: 'CSS3', icon: '🎨' },
-              { name: 'JavaScript', icon: '⚡' },
-              { name: 'React', icon: '⚛️' },
-              { name: 'Node.js', icon: '🟢' },
-              { name: 'TypeScript', icon: '📘' }
+              { name: 'React', percentage: 95, icon: Code },
+              { name: 'JavaScript', percentage: 90, icon: Braces },
+              { name: 'TypeScript', percentage: 85, icon: Database },
+              { name: 'Node.js', percentage: 88, icon: User },
+              { name: 'CSS3', percentage: 92, icon: Palette },
+              { name: 'HTML5', percentage: 95, icon: Code },
+              { name: 'MongoDB', percentage: 80, icon: Database },
+              { name: 'Git', percentage: 87, icon: Github }
             ].map((tech, index) => (
               <div
                 key={tech.name}
-                className="bg-light-gray/5 p-6 rounded-xl text-center hover:bg-teal/10 transition-all duration-300 transform hover:scale-105 group"
+                className="relative bg-light-gray/5 p-6 rounded-xl text-center hover:bg-teal/10 transition-all duration-500 transform hover:scale-105 group skill-card"
               >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {tech.icon}
+                {/* Progress Circle */}
+                <div className="relative w-20 h-20 mx-auto mb-4">
+                  <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 80 80">
+                    {/* Background circle */}
+                    <circle
+                      cx="40"
+                      cy="40"
+                      r="32"
+                      stroke="rgba(100, 255, 218, 0.1)"
+                      strokeWidth="6"
+                      fill="none"
+                    />
+                    {/* Progress circle */}
+                    <circle
+                      cx="40"
+                      cy="40"
+                      r="32"
+                      stroke="#64FFDA"
+                      strokeWidth="6"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeDasharray={`${2 * Math.PI * 32}`}
+                      strokeDashoffset={`${2 * Math.PI * 32 * (1 - tech.percentage / 100)}`}
+                      className="transition-all duration-1000 ease-out group-hover:stroke-teal"
+                      style={{
+                        animationDelay: `${index * 0.1}s`
+                      }}
+                    />
+                  </svg>
+                  
+                  {/* 3D Icon in center */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-8 h-8 bg-teal/20 rounded-lg flex items-center justify-center group-hover:bg-teal/30 transition-all duration-300 transform group-hover:scale-110 skill-icon-3d">
+                      <tech.icon className="w-5 h-5 text-teal" />
+                    </div>
+                  </div>
+                  
+                  {/* Percentage display */}
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                    <span className="text-xs font-bold text-teal bg-navy px-2 py-1 rounded-full border border-teal/30">
+                      {tech.percentage}%
+                    </span>
+                  </div>
                 </div>
-                <p className="text-light-gray group-hover:text-teal transition-colors duration-300 font-medium">
+                
+                <h4 className="text-light-gray group-hover:text-teal transition-colors duration-300 font-semibold text-sm">
                   {tech.name}
-                </p>
+                </h4>
               </div>
             ))}
           </div>
