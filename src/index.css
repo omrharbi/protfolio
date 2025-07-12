@@ -317,11 +317,14 @@
   .skill-card {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(100, 255, 218, 0.1);
+    position: relative;
+    overflow: hidden;
   }
 
   .skill-card:hover {
     border-color: rgba(100, 255, 218, 0.3);
     box-shadow: 0 8px 32px rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
   }
 
   .skill-icon-3d {
@@ -329,6 +332,8 @@
       0 4px 8px rgba(0, 0, 0, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
     background: linear-gradient(145deg, rgba(100, 255, 218, 0.2), rgba(100, 255, 218, 0.1));
+    position: relative;
+    z-index: 2;
   }
 
   .skill-icon-3d:hover {
@@ -338,6 +343,37 @@
       0 0 20px rgba(100, 255, 218, 0.3);
   }
 
+  /* Enhanced 3D skill card effects */
+  .skill-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, transparent 50%, rgba(100, 255, 218, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .skill-card:hover::after {
+    opacity: 1;
+  }
+
+  /* Progress circle animations with stagger */
+  .skill-card:nth-child(1) circle:last-child { animation-delay: 0.1s; }
+  .skill-card:nth-child(2) circle:last-child { animation-delay: 0.2s; }
+  .skill-card:nth-child(3) circle:last-child { animation-delay: 0.3s; }
+  .skill-card:nth-child(4) circle:last-child { animation-delay: 0.4s; }
+  .skill-card:nth-child(5) circle:last-child { animation-delay: 0.5s; }
+  .skill-card:nth-child(6) circle:last-child { animation-delay: 0.6s; }
+  .skill-card:nth-child(7) circle:last-child { animation-delay: 0.7s; }
+  .skill-card:nth-child(8) circle:last-child { animation-delay: 0.8s; }
+  .skill-card:nth-child(9) circle:last-child { animation-delay: 0.9s; }
+  .skill-card:nth-child(10) circle:last-child { animation-delay: 1.0s; }
+
   /* Progress circle animation */
   @keyframes progressFill {
     from {
@@ -346,6 +382,15 @@
     to {
       stroke-dashoffset: var(--progress-offset);
     }
+  }
+
+  /* Skill-specific color variations */
+  .skill-card:nth-child(odd) .skill-icon-3d {
+    background: linear-gradient(145deg, rgba(100, 255, 218, 0.25), rgba(100, 255, 218, 0.15));
+  }
+
+  .skill-card:nth-child(even) .skill-icon-3d {
+    background: linear-gradient(145deg, rgba(100, 255, 218, 0.2), rgba(100, 255, 218, 0.1));
   }
 
   /* 3D depth for skill cards */
@@ -361,6 +406,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
+    z-index: 0;
   }
 
   .skill-card:hover::before {

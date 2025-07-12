@@ -174,14 +174,16 @@ function App() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { name: 'React', percentage: 95, icon: Code },
-              { name: 'JavaScript', percentage: 90, icon: Braces },
-              { name: 'TypeScript', percentage: 85, icon: Database },
-              { name: 'Node.js', percentage: 88, icon: User },
-              { name: 'CSS3', percentage: 92, icon: Palette },
+              { name: 'JavaScript', percentage: 92, icon: Braces },
               { name: 'HTML5', percentage: 95, icon: Code },
-              { name: 'MongoDB', percentage: 80, icon: Database },
-              { name: 'Git', percentage: 87, icon: Github }
+              { name: 'CSS3', percentage: 90, icon: Palette },
+              { name: 'Next.js', percentage: 88, icon: Code },
+              { name: 'GitHub', percentage: 85, icon: Github },
+              { name: 'Docker', percentage: 80, icon: Database },
+              { name: 'Golang', percentage: 75, icon: Braces },
+              { name: 'Rust', percentage: 70, icon: Code },
+              { name: 'Java', percentage: 82, icon: Braces },
+              { name: 'SQL', percentage: 85, icon: Database }
             ].map((tech, index) => (
               <div
                 key={tech.name}
