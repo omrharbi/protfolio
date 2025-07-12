@@ -142,55 +142,11 @@ function App() {
                 </div>
               </div>
             </div>
-
-            {/* Right Content - 3D Profile Image */}
-            <div className="flex justify-center lg:justify-start animate-fade-in-delay-3">
-              <div className="relative perspective-1000">
-                {/* 3D Container with depth layers */}
-                <div className="relative w-80 h-80 lg:w-[420px] lg:h-[420px]">
-                  
-                  {/* 3D Background Layers - Creating depth behind the image */}
-                  <div className="absolute inset-0 transform translate-x-12 translate-y-12 z-0">
-                    <div 
-                      className="w-full h-full bg-gradient-to-br from-teal/15 to-teal/5 blur-lg"
-                      style={{
-                        clipPath: 'polygon(28% 6%, 80% 7%, 102% 51%, 81% 101%, 26% 99%, 2% 57%)',
-                      }}
-                    />
-                  </div>
-
-                  <div className="absolute inset-0 transform translate-x-8 translate-y-8 z-5">
-                    <div 
-                      className="w-full h-full bg-gradient-to-br from-teal/25 to-teal/10 blur-md"
-                      style={{
-                        clipPath: 'polygon(28% 6%, 80% 7%, 102% 51%, 81% 101%, 26% 99%, 2% 57%)',
-                      }}
-                    />
-                  </div>
-
-                  <div className="absolute inset-0 transform translate-x-4 translate-y-4 z-10">
-                    <div 
-                      className="w-full h-full bg-gradient-to-br from-teal/35 to-teal/15 blur-sm"
-                      style={{
-                        clipPath: 'polygon(28% 6%, 80% 7%, 102% 51%, 81% 101%, 26% 99%, 2% 57%)',
-                      }}
-                    />
-                  </div>
-
-                  {/* Main image container - highest z-index to show in front */}
-                  <div className="relative w-full h-full z-20">
-                    {/* Hexagonal container for image */}
-                    <div 
-                      className="w-full h-full overflow-hidden relative"
-                      style={{
-                        // clipPath: 'polygon(28% 6%, 80% 7%, 102% 51%, 81% 101%, 26% 99%, 2% 57%)',
-                      }}
-                    >
-                      {/* Your image with proper sizing to show full face */}
-                      <img
-                        src="/WhatsApp Image 2025-06-02 at 14.45.30(3)(1) (Copy).png"
+            {/* here image */}
+             <img
+                        src="/Asset_4300x.png"
                         alt="Omar Rharbi"
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        className="w-[61%] h-full object-cover hover:scale-105 transition-transform duration-500 "
                         style={{
                           objectPosition: 'center 20%',
                           objectFit: 'cover'
@@ -201,47 +157,6 @@ function App() {
                           if (fallback) fallback.style.display = 'flex';
                         }}
                       />
-                      {/* Fallback content */}
-                      <div className="w-full h-full bg-teal/10 flex items-center justify-center" style={{ display: 'none' }}>
-                        <User className="w-24 h-24 text-teal/60" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Floating 3D elements positioned around the image - Full Stack Developer Icons */}
-                  {/* Coding/Programming Icon - Top Left with Float Animation */}
-                  <div className="absolute -top-6 -left-6 w-14 h-14 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-1 animate-pulse-glow">
-                    <div className="w-10 h-10 bg-teal/30 rounded-full flex items-center justify-center">
-                      <Braces className="w-5 h-5 text-teal drop-shadow-lg animate-rotate-slow" />
-                    </div>
-                  </div>
-                  
-                  {/* Database Icon - Bottom Right with Different Float Animation */}
-                  <div className="absolute -bottom-6 -right-6 w-14 h-14 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-2">
-                    <div className="w-10 h-10 bg-teal/30 rounded-full flex items-center justify-center">
-                      <Database className="w-5 h-5 text-teal drop-shadow-lg animate-bounce-subtle" />
-                    </div>
-                  </div>
-                  
-                  {/* CSS/Styling Icon - Right Side with Rotation Animation */}
-                  <div className="absolute top-1/2 -right-8 w-12 h-12 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-3">
-                    <div className="w-8 h-8 bg-teal/30 rounded-full flex items-center justify-center">
-                      <div className="text-teal font-bold text-xs drop-shadow-lg">CSS</div>
-                    </div>
-                  </div>
-
-                  {/* Additional Full Stack Icon - Left Side with Subtle Float */}
-                  <div className="absolute top-1/3 -left-8 w-12 h-12 bg-gradient-to-br from-teal/40 to-teal/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transform hover:scale-110 transition-all duration-300 z-30 animate-float-4">
-                    <div className="w-8 h-8 bg-teal/30 rounded-full flex items-center justify-center">
-                      <Code className="w-4 h-4 text-teal drop-shadow-lg" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom shadow for 3D depth effect */}
-                <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-4/5 h-16 bg-black/40 rounded-full blur-3xl z-0"></div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
