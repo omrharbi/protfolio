@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Menu, X, ExternalLink, Code, Palette, Database, User, Braces } from 'lucide-react';
+import ContactForm from './components/ContactForm';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -282,6 +283,13 @@ function App() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-navy/30">
+        <div className="max-w-4xl mx-auto px-6">
+          <ContactForm />
         </div>
       </section>
 
