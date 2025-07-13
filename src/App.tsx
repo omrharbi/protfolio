@@ -43,7 +43,7 @@ function App() {
               ))}
               <button className="bg-teal text-navy px-6 py-2 rounded-lg 
               font-semibold hover:bg-teal/90 transition-all duration-300 transform hover:scale-105">
-                Let's Talk
+                <a href="#contact" className="block">Let's Talk</a>
               </button>
             </div>
 
@@ -71,7 +71,7 @@ function App() {
                   </a>
                 ))}
                 <button className="bg-teal text-navy px-6 py-2 rounded-lg font-semibold w-fit">
-                  Let's Talk
+                  <a href="#contact" className="block">Let's Talk</a>
                 </button>
               </div>
             </div>
@@ -113,7 +113,7 @@ function App() {
               {/* CTA Button */}
               <div className="animate-fade-in-delay-5">
                 <button className="bg-teal text-navy px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                  Let's Talk
+                  <a href="#contact" className="block">Let's Talk</a>
                 </button>
               </div>
 
