@@ -269,13 +269,16 @@ function App() {
                   Mini-Framework
                 </h4>
                 <p className="text-light-gray mb-4 text-sm leading-relaxed">
-                  A lightweight JavaScript framework built from scratch. Features component-based architecture, 
-                  virtual DOM, and state management for building modern web applications.
+                  Custom JavaScript framework built from scratch with Virtual DOM, routing system, state management, 
+                  and event handling. Features DOM abstraction, data binding, and templating. Includes comprehensive 
+                  documentation and TodoMVC implementation demonstrating framework capabilities.
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full font-medium">JavaScript</span>
-                    <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full font-medium">Framework</span>
+                    <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full font-medium">JavaScript</span>
+                    <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full font-medium">Virtual DOM</span>
+                    <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full font-medium">State Management</span>
+                    <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full font-medium">Routing</span>
                   </div>
                   <a
                     href="https://github.com/omrharbi/mini-framework"
@@ -307,14 +310,17 @@ function App() {
                   Bomberman Game
                 </h4>
                 <p className="text-light-gray mb-4 text-sm leading-relaxed">
-                  Classic Bomberman game built using my custom mini-framework. Features multiplayer gameplay, 
-                  collision detection, power-ups, and smooth animations.
+                  Multiplayer Bomberman game (2-4 players) built with custom mini-framework. Features real-time 
+                  WebSocket chat, 60fps performance optimization, power-ups system, destructible blocks, 
+                  player lives system, and advanced game mechanics. No Canvas/WebGL - pure DOM manipulation.
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full font-medium">JavaScript</span>
-                    <span className="px-3 py-1 bg-red-500/20 text-red-400 text-xs rounded-full font-medium">Mini-Framework</span>
-                    <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full font-medium">Game</span>
+                    <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full font-medium">JavaScript</span>
+                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded-full font-medium">Mini-Framework</span>
+                    <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full font-medium">Multiplayer</span>
+                    <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full font-medium">WebSockets</span>
+                    <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full font-medium">60fps</span>
                   </div>
                   <a
                     href="https://github.com/omrharbi/bomberman"
