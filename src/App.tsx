@@ -149,7 +149,7 @@ function App() {
             <div className="relative flex items-center justify-center lg:justify-end">
               <div className="fullpage-image-container">
                 <img
-                  src="/Asset_4300x.png"
+                  src="../Asset_4300x.png"
                   alt="Omar Rharbi"
                   className="fullpage-profile-image"
                   onError={(e) => {
