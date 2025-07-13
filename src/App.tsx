@@ -349,14 +349,18 @@ function App() {
                   Social Network
                 </h4>
                 <p className="text-light-gray mb-4 text-sm leading-relaxed">
-                  Full-stack social media platform with real-time messaging, user profiles, posts, 
-                  and social interactions. Built with modern web technologies.
+                  Complete Facebook-like social network featuring user authentication, followers system, 
+                  public/private profiles, posts with privacy controls, groups with events, real-time chat 
+                  via WebSockets, notifications, and image handling. Built with Next.js frontend, Golang backend, 
+                  SQLite database, Docker containerization, and comprehensive migration system.
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full font-medium">Next.js</span>
-                    <span className="px-3 py-1 bg-teal-500/20 text-teal-400 text-xs rounded-full font-medium">Golang</span>
-                    <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full font-medium">Full-Stack</span>
+                    <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full font-medium">Next.js</span>
+                    <span className="px-2 py-1 bg-teal-500/20 text-teal-400 text-xs rounded-full font-medium">Golang</span>
+                    <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full font-medium">WebSockets</span>
+                    <span className="px-2 py-1 bg-gray-500/20 text-gray-400 text-xs rounded-full font-medium">SQLite</span>
+                    <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full font-medium">Docker</span>
                   </div>
                   <a
                     href="https://github.com/omrharbi/social-network"
