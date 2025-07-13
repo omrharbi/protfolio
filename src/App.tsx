@@ -17,9 +17,8 @@ function App() {
   return (
     <div className="min-h-screen bg-navy text-white">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrollY > 50 ? 'bg-navy/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-      }`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-navy/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+        }`}>
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -70,9 +69,11 @@ function App() {
                     {item}
                   </a>
                 ))}
-                <button className="bg-teal text-navy px-6 py-2 rounded-lg font-semibold w-fit">
-                  <a href="#contact" className="block">Let's Talk</a>
-                </button>
+                <a href="#contact" className="block">
+                  <button className="bg-teal text-navy px-6 py-2 rounded-lg font-semibold w-fit">
+                    Let's Talk
+                  </button>
+                </a>
               </div>
             </div>
           )}
@@ -106,17 +107,17 @@ function App() {
               </div>
 
               <p className="text-light-gray text-lg leading-relaxed max-w-lg animate-fade-in-delay-4">
-                I specialize in creating beautiful, functional digital experiences that solve real-world problems. 
-                Let's build something amazing together.
+                I'm Omar Rharbi, a software developer in training at Zone 01 Oujda, passionate about full-stack development — from frontend design to backend logic. I enjoy solving complex problems, building creative solutions, and constantly improving my skills through real-world projects and collaboration.
               </p>
 
               {/* CTA Button */}
-              <div className="animate-fade-in-delay-5">
-                <button className="bg-teal text-navy px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                  <a href="#contact" className="block">Let's Talk</a>
-                </button>
-              </div>
-
+              <a href="#contact" className="block">
+                <div className="animate-fade-in-delay-5">
+                  <button className="bg-teal text-navy px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                    Let's Talk
+                  </button>
+                </div>
+              </a>
               {/* Social Links */}
               <div className="flex items-center space-x-6 animate-fade-in-delay-6">
                 <span className="text-light-gray text-sm">Check Out My</span>
@@ -159,10 +160,10 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Skills Section */}
-      <section className="py-20 bg-navy/50">
+      < section className="py-20 bg-navy/50" >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -219,14 +220,14 @@ function App() {
                       }}
                     />
                   </svg>
-                  
+
                   {/* 3D Icon in center */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-8 h-8 bg-teal/20 rounded-lg flex items-center justify-center group-hover:bg-teal/30 transition-all duration-300 transform group-hover:scale-110 skill-icon-3d">
                       <tech.icon className="w-5 h-5 text-teal" />
                     </div>
                   </div>
-                  
+
                   {/* Percentage display */}
                   <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
                     <span className="text-xs font-bold text-teal bg-navy px-2 py-1 rounded-full border border-teal/30">
@@ -234,7 +235,7 @@ function App() {
                     </span>
                   </div>
                 </div>
-                
+
                 <h4 className="text-light-gray group-hover:text-teal transition-colors duration-300 font-semibold text-sm">
                   {tech.name}
                 </h4>
@@ -242,10 +243,10 @@ function App() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Projects Preview */}
-      <section id="projects" className="py-20">
+      < section id="projects" className="py-20" >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -269,8 +270,8 @@ function App() {
                   Mini-Framework
                 </h4>
                 <p className="text-light-gray mb-4 text-sm leading-relaxed">
-                  Custom JavaScript framework built from scratch with Virtual DOM, routing system, state management, 
-                  and event handling. Features DOM abstraction, data binding, and templating. Includes comprehensive 
+                  Custom JavaScript framework built from scratch with Virtual DOM, routing system, state management,
+                  and event handling. Features DOM abstraction, data binding, and templating. Includes comprehensive
                   documentation and TodoMVC implementation demonstrating framework capabilities.
                 </p>
                 <div className="flex items-center justify-between">
@@ -310,8 +311,8 @@ function App() {
                   Bomberman Game
                 </h4>
                 <p className="text-light-gray mb-4 text-sm leading-relaxed">
-                  Multiplayer Bomberman game (2-4 players) built with custom mini-framework. Features real-time 
-                  WebSocket chat, 60fps performance optimization, power-ups system, destructible blocks, 
+                  Multiplayer Bomberman game (2-4 players) built with custom mini-framework. Features real-time
+                  WebSocket chat, 60fps performance optimization, power-ups system, destructible blocks,
                   player lives system, and advanced game mechanics. No Canvas/WebGL - pure DOM manipulation.
                 </p>
                 <div className="flex items-center justify-between">
@@ -355,9 +356,9 @@ function App() {
                   Social Network
                 </h4>
                 <p className="text-light-gray mb-4 text-sm leading-relaxed">
-                  Complete Facebook-like social network featuring user authentication, followers system, 
-                  public/private profiles, posts with privacy controls, groups with events, real-time chat 
-                  via WebSockets, notifications, and image handling. Built with Next.js frontend, Golang backend, 
+                  Complete Facebook-like social network featuring user authentication, followers system,
+                  public/private profiles, posts with privacy controls, groups with events, real-time chat
+                  via WebSockets, notifications, and image handling. Built with Next.js frontend, Golang backend,
                   SQLite database, Docker containerization, and comprehensive migration system.
                 </p>
                 <div className="flex items-center justify-between">
@@ -382,17 +383,17 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-navy/30">
+      < section id="contact" className="py-20 bg-navy/30" >
         <div className="max-w-4xl mx-auto px-6">
           <ContactForm />
         </div>
-      </section>
+      </section >
 
       {/* Footer */}
-      <footer className="py-12 border-t border-light-gray/20">
+      < footer className="py-12 border-t border-light-gray/20" >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
@@ -406,8 +407,8 @@ function App() {
             </p>
           </div>
         </div>
-      </footer>
-    </div>
+      </footer >
+    </div >
   );
 }
 
