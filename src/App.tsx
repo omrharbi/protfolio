@@ -135,7 +135,7 @@ function App() {
                     <Linkedin size={24} />
                   </a>
                   <a
-                    href="rharbuomar@gmail.com"
+                    href="mailto:rharbuomar@gmail.com"
                     className="w-12 h-12 bg-light-gray/10 rounded-full flex
                      items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
                   >
