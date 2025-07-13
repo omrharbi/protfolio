@@ -257,31 +257,119 @@ function App() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((project) => (
-              <div
-                key={project}
-                className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group"
-              >
-                <div className="h-48 bg-teal/20 flex items-center justify-center">
-                  <Code className="w-16 h-16 text-teal/60" />
-                </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-teal transition-colors duration-300">
-                    Project {project}
-                  </h4>
-                  <p className="text-light-gray mb-4">
-                    A brief description of this amazing project and the technologies used to build it.
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex space-x-2">
-                      <span className="px-3 py-1 bg-teal/20 text-teal text-sm rounded-full">React</span>
-                      <span className="px-3 py-1 bg-teal/20 text-teal text-sm rounded-full">CSS</span>
-                    </div>
-                    <ExternalLink className="w-5 h-5 text-light-gray group-hover:text-teal transition-colors duration-300" />
+            {/* Mini-Framework Project */}
+            <div className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10">
+              <div className="h-48 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-orange-400/10"></div>
+                <Braces className="w-16 h-16 text-yellow-400 relative z-10" />
+                <div className="absolute top-4 right-4 w-8 h-8 bg-yellow-400/20 rounded-full animate-pulse"></div>
+              </div>
+              <div className="p-6">
+                <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-teal transition-colors duration-300">
+                  Mini-Framework
+                </h4>
+                <p className="text-light-gray mb-4 text-sm leading-relaxed">
+                  A lightweight JavaScript framework built from scratch. Features component-based architecture, 
+                  virtual DOM, and state management for building modern web applications.
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full font-medium">JavaScript</span>
+                    <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full font-medium">Framework</span>
                   </div>
+                  <a
+                    href="https://github.com/omrharbi/mini-framework"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-1 text-light-gray hover:text-teal transition-colors duration-300"
+                  >
+                    <Github className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Bomberman Project */}
+            <div className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10">
+              <div className="h-48 bg-gradient-to-br from-red-500/20 to-orange-500/20 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-400/10 to-orange-400/10"></div>
+                <div className="relative z-10 flex items-center space-x-2">
+                  <div className="w-12 h-12 bg-red-500/30 rounded-lg flex items-center justify-center">
+                    <span className="text-2xl">💣</span>
+                  </div>
+                  <Code className="w-8 h-8 text-orange-400" />
+                </div>
+                <div className="absolute bottom-4 left-4 w-6 h-6 bg-red-400/20 rounded-full animate-bounce"></div>
+              </div>
+              <div className="p-6">
+                <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-teal transition-colors duration-300">
+                  Bomberman Game
+                </h4>
+                <p className="text-light-gray mb-4 text-sm leading-relaxed">
+                  Classic Bomberman game built using my custom mini-framework. Features multiplayer gameplay, 
+                  collision detection, power-ups, and smooth animations.
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full font-medium">JavaScript</span>
+                    <span className="px-3 py-1 bg-red-500/20 text-red-400 text-xs rounded-full font-medium">Mini-Framework</span>
+                    <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full font-medium">Game</span>
+                  </div>
+                  <a
+                    href="https://github.com/omrharbi/bomberman"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-1 text-light-gray hover:text-teal transition-colors duration-300"
+                  >
+                    <Github className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Network Project */}
+            <div className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10">
+              <div className="h-48 bg-gradient-to-br from-blue-500/20 to-teal-500/20 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-teal-400/10"></div>
+                <div className="relative z-10 flex items-center space-x-3">
+                  <User className="w-10 h-10 text-blue-400" />
+                  <div className="flex flex-col space-y-1">
+                    <div className="w-8 h-1 bg-teal-400 rounded"></div>
+                    <div className="w-6 h-1 bg-blue-400 rounded"></div>
+                    <div className="w-10 h-1 bg-teal-400 rounded"></div>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <div className="absolute bottom-4 left-4 w-4 h-4 bg-blue-400/30 rounded-full"></div>
+              </div>
+              <div className="p-6">
+                <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-teal transition-colors duration-300">
+                  Social Network
+                </h4>
+                <p className="text-light-gray mb-4 text-sm leading-relaxed">
+                  Full-stack social media platform with real-time messaging, user profiles, posts, 
+                  and social interactions. Built with modern web technologies.
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full font-medium">Next.js</span>
+                    <span className="px-3 py-1 bg-teal-500/20 text-teal-400 text-xs rounded-full font-medium">Golang</span>
+                    <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full font-medium">Full-Stack</span>
+                  </div>
+                  <a
+                    href="https://github.com/omrharbi/social-network"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-1 text-light-gray hover:text-teal transition-colors duration-300"
+                  >
+                    <Github className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
