@@ -123,19 +123,19 @@ function App() {
                 <span className="text-light-gray text-sm">Check Out My</span>
                 <div className="flex space-x-4">
                   <a
-                    href="https://github.com"
+                    href="https://github.com/omrharbi/"
                     className="w-12 h-12 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
                   >
                     <Github size={24} />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/omar-rharbi-899679168/"
                     className="w-12 h-12 bg-light-gray/10 rounded-full flex items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
                   >
                     <Linkedin size={24} />
                   </a>
                   <a
-                    href="mailto:omar@example.com"
+                    href="rharbuomar@gmail.com"
                     className="w-12 h-12 bg-light-gray/10 rounded-full flex
                      items-center justify-center text-light-gray hover:text-teal hover:bg-teal/10 transition-all duration-300"
                   >
