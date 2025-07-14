@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Menu, X, ExternalLink, Code, Palette, Database, User, Braces } from 'lucide-react';
 import ContactForm from './components/ContactForm';
+import { useScrollAnimationGroup } from './hooks/useScrollAnimation';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -174,7 +175,7 @@ function App() {
       {/* Skills Section */}
       <section className="py-20 bg-navy/50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16" data-scroll-animate data-delay="0">
+          <div className="text-center mb-16">
             <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Skills & Expertise
             </h3>
@@ -183,7 +184,7 @@ function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" ref={useScrollAnimationGroup({ 
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" ref={useScrollAnimationGroup({
             threshold: 0.1, 
             triggerOnce: true,
             animationClass: 'animate-fade-in-up'
@@ -203,7 +204,6 @@ function App() {
               <div
                 key={tech.name}
                 data-scroll-animate
-                data-delay={index * 100}
                 className="relative bg-light-gray/5 p-6 rounded-xl text-center hover:bg-teal/10 transition-all duration-500 transform hover:scale-105 group skill-card"
               >
                 {/* Progress Circle */}
@@ -263,7 +263,7 @@ function App() {
       {/* Projects Preview */}
       <section id="projects" className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16" data-scroll-animate data-delay="0">
+          <div className="text-center mb-16">
             <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Featured Projects
             </h3>
@@ -272,15 +272,14 @@ function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" ref={useScrollAnimationGroup({ 
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" ref={useScrollAnimationGroup({
             threshold: 0.1, 
             triggerOnce: true,
             animationClass: 'animate-fade-in-up'
           })}>
             {/* Mini-Framework Project */}
             <div 
-              data-scroll-animate 
-              data-delay="0"
+              data-scroll-animate
               className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10"
             >
               <div className="h-48 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center relative overflow-hidden">
@@ -319,8 +318,7 @@ function App() {
 
             {/* Bomberman Project */}
             <div 
-              data-scroll-animate 
-              data-delay="200"
+              data-scroll-animate
               className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10"
             >
               <div className="h-48 bg-gradient-to-br from-red-500/20 to-orange-500/20 flex items-center justify-center relative overflow-hidden">
@@ -365,8 +363,7 @@ function App() {
 
             {/* Social Network Project */}
             <div 
-              data-scroll-animate 
-              data-delay="400"
+              data-scroll-animate
               className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10"
             >
               <div className="h-48 bg-gradient-to-br from-blue-500/20 to-teal-500/20 flex items-center justify-center relative overflow-hidden">
@@ -418,7 +415,7 @@ function App() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-navy/30">
-        <div className="max-w-4xl mx-auto px-6" data-scroll-animate data-delay="0">
+        <div className="max-w-4xl mx-auto px-6">
           <ContactForm />
         </div>
       </section>
