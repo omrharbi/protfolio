@@ -172,9 +172,9 @@ function App() {
       </section >
 
       {/* Skills Section */}
-      <section className="py-20 bg-navy/50">
+      < section className="py-20 bg-navy/50" >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16" data-scroll-animate data-delay="0">
+          <div className="text-center mb-16">
             <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Skills & Expertise
             </h3>
@@ -183,11 +183,7 @@ function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" ref={useScrollAnimationGroup({ 
-            threshold: 0.1, 
-            triggerOnce: true,
-            animationClass: 'animate-fade-in-up'
-          })}>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
               { name: 'JavaScript', percentage: 75, icon: Braces },
               { name: 'HTML5', percentage: 95, icon: Code },
@@ -202,8 +198,6 @@ function App() {
             ].map((tech, index) => (
               <div
                 key={tech.name}
-                data-scroll-animate
-                data-delay={index * 100}
                 className="relative bg-light-gray/5 p-6 rounded-xl text-center hover:bg-teal/10 transition-all duration-500 transform hover:scale-105 group skill-card"
               >
                 {/* Progress Circle */}
@@ -261,9 +255,9 @@ function App() {
       </section >
 
       {/* Projects Preview */}
-      <section id="projects" className="py-20">
+      < section id="projects" className="py-20" >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16" data-scroll-animate data-delay="0">
+          <div className="text-center mb-16">
             <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Featured Projects
             </h3>
@@ -272,17 +266,9 @@ function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" ref={useScrollAnimationGroup({ 
-            threshold: 0.1, 
-            triggerOnce: true,
-            animationClass: 'animate-fade-in-up'
-          })}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Mini-Framework Project */}
-            <div 
-              data-scroll-animate 
-              data-delay="0"
-              className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10"
-            >
+            <div className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10">
               <div className="h-48 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-orange-400/10"></div>
                 <Braces className="w-16 h-16 text-yellow-400 relative z-10" />
@@ -318,11 +304,7 @@ function App() {
             </div>
 
             {/* Bomberman Project */}
-            <div 
-              data-scroll-animate 
-              data-delay="200"
-              className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10"
-            >
+            <div className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10">
               <div className="h-48 bg-gradient-to-br from-red-500/20 to-orange-500/20 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-400/10 to-orange-400/10"></div>
                 <div className="relative z-10 flex items-center space-x-2">
@@ -364,11 +346,7 @@ function App() {
             </div>
 
             {/* Social Network Project */}
-            <div 
-              data-scroll-animate 
-              data-delay="400"
-              className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10"
-            >
+            <div className="bg-light-gray/5 rounded-xl overflow-hidden hover:bg-light-gray/10 transition-all duration-300 transform hover:scale-105 group border border-light-gray/10">
               <div className="h-48 bg-gradient-to-br from-blue-500/20 to-teal-500/20 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-teal-400/10"></div>
                 <div className="relative z-10 flex items-center space-x-3">
@@ -417,11 +395,11 @@ function App() {
       </section >
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-navy/30">
-        <div className="max-w-4xl mx-auto px-6" data-scroll-animate data-delay="0">
+      < section id="contact" className="py-20 bg-navy/30" >
+        <div className="max-w-4xl mx-auto px-6">
           <ContactForm />
         </div>
-      </section>
+      </section >
 
       {/* Footer */}
       < footer className="py-12 border-t border-light-gray/20" >
