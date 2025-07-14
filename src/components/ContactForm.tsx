@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, User, MessageSquare, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { useScrollAnimationGroup } from '../hooks/useScrollAnimation';
 
 interface FormData {
   name: string;
