@@ -110,6 +110,54 @@
     opacity: 0;
   }
 
+  /* Scroll Animation Classes */
+  .animate-fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-fade-in-down {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-fade-in-left {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-fade-in-right {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-scale-up {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Smooth scroll behavior */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-up,
+    .animate-fade-in-down,
+    .animate-fade-in-left,
+    .animate-fade-in-right,
+    .animate-scale-up {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    .scroll-smooth {
+      scroll-behavior: auto;
+    }
+  }
+
   .animate-fade-in-delay-1 {
     animation: fadeIn 1s ease-out 0.2s forwards;
     opacity: 0;
