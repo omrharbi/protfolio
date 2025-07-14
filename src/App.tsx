@@ -12,7 +12,15 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['Home', 'Projects', 'Resume'];
+  const navItems = ['Home', 'About', 'Projects', 'Contact'];
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId.toLowerCase());
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false); // Close mobile menu after clicking
+  };
 
   return (
     <div className="min-h-screen bg-navy text-white">
@@ -32,17 +40,17 @@ function App() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  onClick={() => scrollToSection(item)}
                   className="text-light-gray hover:text-teal transition-colors duration-300 font-medium"
                 >
                   {item}
-                </a>
+                </button>
               ))}
               <button className="bg-teal text-navy px-6 py-2 rounded-lg 
               font-semibold hover:bg-teal/90 transition-all duration-300 transform hover:scale-105">
-                <a href="#contact" className="block">Let's Talk</a>
+                <span onClick={() => scrollToSection('contact')}>Let's Talk</span>
               </button>
             </div>
 
@@ -57,23 +65,23 @@ function App() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-light-gray/20">
+            <div className="md:hidden mt-4 pb-4 border-t border-light-gray/20 bg-navy/95 backdrop-blur-sm rounded-lg">
               <div className="flex flex-col space-y-4 mt-4">
                 {navItems.map((item) => (
-                  <a
+                  <button
                     key={item}
-                    href={`#${item.toLowerCase()}`}
-                    className="text-light-gray hover:text-teal transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => scrollToSection(item)}
+                    className="text-light-gray hover:text-teal transition-colors duration-300 text-left py-2 px-4 rounded-lg hover:bg-teal/10"
                   >
                     {item}
-                  </a>
-                ))}
-                <a href="#contact" className="block">
-                  <button className="bg-teal text-navy px-6 py-2 rounded-lg font-semibold w-fit">
-                    Let's Talk
                   </button>
-                </a>
+                ))}
+                <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="bg-teal text-navy px-6 py-2 rounded-lg font-semibold w-fit mx-4 hover:bg-teal/90 transition-all duration-300"
+                >
+                  Let's Talk
+                </button>
               </div>
             </div>
           )}
@@ -111,13 +119,14 @@ function App() {
               </p>
 
               {/* CTA Button */}
-              <a href="#contact" className="block">
-                <div className="animate-fade-in-delay-5">
-                  <button className="bg-teal text-navy px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                    Let's Talk
-                  </button>
-                </div>
-              </a>
+              <div className="animate-fade-in-delay-5">
+                <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="bg-teal text-navy px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
+                  Let's Talk
+                </button>
+              </div>
               {/* Social Links */}
               <div className="flex items-center space-x-6 animate-fade-in-delay-6">
                 <span className="text-light-gray text-sm">Check Out My</span>
